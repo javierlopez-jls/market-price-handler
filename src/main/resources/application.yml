@@ -1,0 +1,34 @@
+
+## Spring properties
+spring:
+  application:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+# Logging
+logging:
+  level:
+    ROOT: DEBUG
+
+# Application info
+info:
+  app:
+    name: Market Price Handler ${spring.profiles.active} (${PROJECT_NAME:localhost})
+    description: A demo of Market Price Handler
+  tags:
+    environment: ${spring.profiles.active}
+    namespace: ${PROJECT_NAME:localhost}
+    java: ${java.version}
+
+# Server Info
+server:
+  servlet.context-path: /market-price-handler
+  port: 35000
+  forward-headers-strategy: FRAMEWORK
+  tomcat:
+    accesslog:
+      enabled: true
+  error:
+    include-message: always
+    include-binding-errors: always
